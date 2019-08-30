@@ -38,4 +38,19 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
 	}
 	
+	/*
+	 * Essa é outra forma mais rápida de verificar se o email já existe na base de dados, 
+	 * serve tanto para validar uma requisição do tipo POST(Inserção) ou PUT (Atualização)
+	 * Evitando alguns passos a mais do CLienteInsert, ClienteInsertValidator, ClienteUpdate e ClienteUpdateValidator
+	 */
+	/*@ExceptionHandler(DataIntegrityViolationException.class)
+	public ResponseEntity<StandardError> dataIntegretyViolationException(DataIntegrityViolationException ex, HttpServletRequest request){
+	    ValidationError error = new ValidationError(HttpStatus.BAD_REQUEST.value(),ex.getMessage(),System.currentTimeMillis());
+	    if(ex.getMessage().contains("EMAIL")){
+	        error.setMsg("Erro de validação.");
+	        error.addError("email","Email já existente!");
+	    }
+	    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+	}*/
+	
 }
