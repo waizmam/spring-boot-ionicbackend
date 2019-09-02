@@ -22,7 +22,7 @@ import com.waizmam.cursomc.dto.CategoriaDTO;
 import com.waizmam.cursomc.services.CategoriaService;
 
 @RestController
-@RequestMapping(value = "/categorias/")
+@RequestMapping(value = "/categorias")
 public class CategoriaResource {
 	
 	@Autowired

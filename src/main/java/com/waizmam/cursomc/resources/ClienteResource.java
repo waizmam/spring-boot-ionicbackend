@@ -23,7 +23,7 @@ import com.waizmam.cursomc.dto.ClienteNewDTO;
 import com.waizmam.cursomc.services.ClienteService;
 
 @RestController
-@RequestMapping(value = "/clientes/")
+@RequestMapping(value = "/clientes")
 public class ClienteResource {
 	
 	@Autowired
