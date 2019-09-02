@@ -38,4 +38,10 @@ public class ProdutoService {
 		
 	}
 	
+	public Produto findOne(Integer id) {
+		Optional<Produto> obj = repo.findById(id);
+		return obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Produto.class.getName()));
+	}
+	
 }
